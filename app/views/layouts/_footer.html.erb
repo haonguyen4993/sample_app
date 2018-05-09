@@ -1,0 +1,16 @@
+<footer class="footer">
+  <small>
+    <%= (t ".resource",
+      source: link_to("Ruby on Rails Tutorial", "http://www.railstutorial.org/"),
+      author: link_to("Michael Hartl", "http://www.michaelhartl.com/")).html_safe %>
+  </small>
+  <nav>
+    <ul>
+      <li><%= link_to t("static_pages.about"), about_path %></li>
+      <li><%= link_to t("static_pates.contact"), contact_path %></li>
+      <li>
+        <%= link_to t("static_pages.news"), "http://news.railstutorial.org/" %>
+      </li>
+    </ul>
+  </nav>
+</footer>
