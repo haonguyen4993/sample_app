@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -6,39 +6,40 @@ git_source(:github) do |repo_name|
 end
 
 
-gem 'rails', '~> 5.0.7'
-gem 'puma', '~> 3.0'
-gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.2'
-gem 'jquery-rails'
-gem 'turbolinks', '~> 5'
-gem 'jbuilder', '~> 2.5'
+gem "rails", "~> 5.0.7"
+gem "puma", "~> 3.0"
+gem "sass-rails", "~> 5.0"
+gem "uglifier", ">= 1.3.0"
+gem "coffee-rails", "~> 4.2"
+gem "jquery-rails"
+gem "turbolinks", "~> 5"
+gem "jbuilder", "~> 2.5"
 
 group :development, :test do
-  gem 'sqlite3'
-  gem 'byebug', platform: :mri
+  gem "sqlite3"
+  gem "byebug", platform: :mri
 end
 
 group :development do
-  gem 'web-console', '>= 3.3.0'
-  gem 'listen', '~> 3.0.5'
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem "web-console", ">= 3.3.0"
+  gem "listen", "~> 3.0.5"
+  gem "spring"
+  gem "spring-watcher-listen", "~> 2.0.0"
 end
 
 group :test do
-  gem 'rails-controller-testing', '1.0.2'
-  gem 'minitest'
-  gem 'minitest-reporters'
-  gem 'guard', '2.13.0'
-  gem 'guard-minitest', '2.4.4'
+  gem "rails-controller-testing", "1.0.2"
+  gem "minitest"
+  gem "minitest-reporters"
+  gem "guard", "2.13.0"
+  gem "guard-minitest", "2.4.4"
 end
 
 group :production do
-  gem 'pg'
+  gem "pg"
 end
 
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'rubocop', '~> 0.35.1', require: false
+gem "rubocop", "~> 0.35.1", require: false
+gem "bootstrap-sass"
