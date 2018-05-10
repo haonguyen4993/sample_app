@@ -1,4 +1,11 @@
 en:
+  error:
+    zero: "no error"
+    one: "1 error"
+    other: "%{count} errors"
+  alert:
+    signup_success: "Welcome to the Sample App!"
+    user_not_exist: "User does not exist"
   layouts:
     application:
       base_title: "Ruby on Rails Tutorial Sample App"
@@ -6,6 +13,16 @@ en:
       logo_text: "Sample App"
     footer:
       resource: "The %{source} by %{author}"
+  users:
+    new:
+      signup: "Sign up"
+      create: "Create my account"
+    form:
+      error_msg: "The from contails %{error}"
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      confirmation: "Confirm password"
   static_pages:
     about: "About"
     contact: "Contact"
