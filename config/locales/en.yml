@@ -6,11 +6,17 @@ en:
   alert:
     signup_success: "Welcome to the Sample App!"
     user_not_exist: "User does not exist"
+    login_success: "Welcome back %{name}"
+    invalid_login: "Invalid email/password"
+    log_out: "See ya!"
   layouts:
     application:
       base_title: "Ruby on Rails Tutorial Sample App"
     header:
       logo_text: "Sample App"
+      account: "Account"
+      profile: "Profile"
+      settings: "Settings"
     footer:
       resource: "The %{source} by %{author}"
   users:
@@ -32,6 +38,7 @@ en:
     greating: "Welcome to the Sample App"
   navigation:
     login: "Log in"
+    logout: "Log out"
     signup: "Sign up now!"
   activerecord:
     errors:
