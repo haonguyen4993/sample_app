@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 
-  resources :users, only: [:new, :create, :show]
+  resources :users, except: %i(destroy)
 
   root "static_pages#home"
 end

@@ -9,6 +9,9 @@ en:
     login_success: "Welcome back %{name}"
     invalid_login: "Invalid email/password"
     log_out: "See ya!"
+    profile_updated: "Your profile has been updated"
+    please_log_in: "Please log in"
+    permit_deny: "Permission denied"
   layouts:
     application:
       base_title: "Ruby on Rails Tutorial Sample App"
@@ -17,6 +20,7 @@ en:
       account: "Account"
       profile: "Profile"
       settings: "Settings"
+      users: "Users"
     footer:
       resource: "The %{source} by %{author}"
   users:
@@ -29,6 +33,13 @@ en:
       email: "Email"
       password: "Password"
       confirmation: "Confirm password"
+    edit:
+      edit_user: "Edit user"
+      update_profile: "Update your profile"
+      save: "Save changes"
+      change: "change"
+    index:
+      all_users: "All users"
   static_pages:
     about: "About"
     contact: "Contact"
