@@ -2,3 +2,4 @@ user:
   mail_length: 255
   name_length: 50
   min_pass: 6
+  per_page: 4

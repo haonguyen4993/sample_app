@@ -45,3 +45,5 @@ gem "rubocop", "~> 0.35.1", require: false
 gem "bootstrap-sass"
 gem "bcrypt"
 gem "config"
+gem "will_paginate"
+gem "bootstrap-will_paginate"
