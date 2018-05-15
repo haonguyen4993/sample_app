@@ -12,6 +12,8 @@ en:
     profile_updated: "Your profile has been updated"
     please_log_in: "Please log in"
     permit_deny: "Permission denied"
+    user_deleted: "User deleted"
+    cant_delete: "Can not delete user %{name}"
   layouts:
     application:
       base_title: "Ruby on Rails Tutorial Sample App"
@@ -40,6 +42,8 @@ en:
       change: "change"
     index:
       all_users: "All users"
+      delete: "Delete"
+      sure: "Are you sure?"
   static_pages:
     about: "About"
     contact: "Contact"
