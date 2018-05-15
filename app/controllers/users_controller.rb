@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   before_action :admin_user, only: %i(destroy)
 
   def index
-    @users = User.except_ids(current_user.id)
+    @users = User.except_ids(current_user.id).activated
       .paginate page: params[:page], per_page: Settings.user.per_page
   end
 
@@ -16,9 +16,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
     if @user.save
-      flash[:success] = t "alert.signup_success"
-      log_in @user
-      redirect_to @user
+      @user.send_activation_email
+      flash[:info] = t "alert.active_email_msg"
+      redirect_to root_url
     else
       render :new
     end
