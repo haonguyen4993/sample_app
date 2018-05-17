@@ -1,10 +1,12 @@
 class UsersController < ApplicationController
+  before_action :load_user, except: %i(index new create)
   before_action :logged_in_user, only: %i(index edit update)
   before_action :correct_user, only: %i(edit update)
-  before_action :load_user, only: %i(edit update show)
+  before_action :admin_user, only: %i(destroy)
 
   def index
-    @users = User.paginate page: params[:page], per_page: Settings.user.per_page
+    @users = User.except_ids(current_user.id)
+      .paginate page: params[:page], per_page: Settings.user.per_page
   end
 
   def new
@@ -35,14 +37,23 @@ class UsersController < ApplicationController
   end
 
   def show
-    return if @user
-    flash[:danger] = t "alert.user_not_exist"
-    redirect_to root_url
+  end
+
+  def destroy
+    if @user.destroy
+      flash[:success] = t "alert.user_deleted"
+    else
+      flash[:danger] = t "alert.cant_delete", name: @user.name
+    end
+    redirect_to users_url
   end
 
   private
   def load_user
     @user = User.find_by id: params[:id]
+    return if @user
+    flash[:danger] = t "alert.user_not_exist"
+    redirect_to root_url
   end
 
   def user_params
@@ -59,8 +70,14 @@ class UsersController < ApplicationController
 
   # confirms the correct user
   def correct_user
-    set_user
     return if current_user? @user
+    flash[:danger] = t "alert.permit_deny"
+    redirect_to root_url
+  end
+
+  # confirms an admin user
+  def admin_user
+    return if current_user.is_admin?
     flash[:danger] = t "alert.permit_deny"
     redirect_to root_url
   end
