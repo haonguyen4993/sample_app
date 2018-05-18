@@ -14,6 +14,10 @@ en:
     permit_deny: "Permission denied"
     user_deleted: "User deleted"
     cant_delete: "Can not delete user %{name}"
+    account_validated: "Account validated!"
+    invalid_activation_link: "Invalid activation link!"
+    active_email_msg: "Please check yout email to activate your account."
+    please_activate: "Account not activated. Check your email for the activation link."
   layouts:
     application:
       base_title: "Ruby on Rails Tutorial Sample App"
@@ -44,6 +48,13 @@ en:
       all_users: "All users"
       delete: "Delete"
       sure: "Are you sure?"
+  user_mailer:
+    account_activation:
+      activate: "Activate"
+      greeting: "Hi %{name}"
+      activation_mail_body: "Welcome to the Sample App!\
+        Click on the link below to activate your account:"
+      subject: "Account activation"
   static_pages:
     about: "About"
     contact: "Contact"
